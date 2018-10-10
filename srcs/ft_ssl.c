@@ -76,10 +76,12 @@ int		main(int argc, char **argv)
 	opt = check_opt(opt, argv);
 	if (opt->output)
 		open_fd(opt);
-	if (opt->p || !opt->arg)
+	if (opt->hash == 5)
+		return (genrsa(opt));
+	if ((opt->p || !opt->arg))
 		handle_stdin(opt);
 	opt->stdin = 0;
-	if (argc >= 3)
+	if (argc >= 3 || opt->hash == 5)
 		handle_args(opt);
 	return (0);
 }

@@ -24,6 +24,7 @@ SRC += display.c
 SRC += des.c
 SRC += des2.c
 SRC += des3.c
+SRC += genrsa.c
 
 NAME = ft_ssl
 
